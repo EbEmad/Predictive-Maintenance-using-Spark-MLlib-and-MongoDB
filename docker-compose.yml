@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  mogodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    networks:
+      - spark_mongo_network
+    command: mongodb
+
+
+networks:
+  spark_mongo_network:
+    driver: bridge
